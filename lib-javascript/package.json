@@ -1,0 +1,73 @@
+{
+  "name": "pryv",
+  "version": "1.0.2",
+  "description": "Javascript library (browser & Node.js) to access and manipulate Pryv users data",
+  "keywords": [
+    "pryv",
+    "api",
+    "library"
+  ],
+  "homepage": "http://pryv.github.io",
+  "bugs": {
+    "url": "http://github.com/pryv/lib-javascript/issues"
+  },
+  "license": "BSD-3-Clause",
+  "contributors": [
+    {
+      "name": "Jordane Pagand",
+      "url": "http://github.com/jpagand"
+    },
+    {
+      "name": "Pierre-Mikael Legris",
+      "url": "http://github.com/perki"
+    },
+    {
+      "name": "Marzell Camenzind",
+      "url": "http://github.com/mcamenzind"
+    },
+    {
+      "name": "Simon Goumaz",
+      "url": "http://github.com/sgoumaz"
+    },
+    {
+      "name": "Quentin Kermaidic",
+      "url": "https://github.com/kerma0"
+    },
+    {
+      "name": "Ilia Kebets",
+      "url": "https://github.com/kebetsi"
+    }
+  ],
+  "files": [
+    "source"
+  ],
+  "main": "source/main.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lib-javascript.git"
+  },
+  "dependencies": {
+    "form-data": "0.1.x",
+    "socket.io-client": "0.9.x",
+    "underscore": "latest"
+  },
+  "devDependencies": {
+    "async": "latest",
+    "blanket": "latest",
+    "coffee-script": "latest",
+    "grunt": "latest",
+    "grunt-browserify": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-env": "latest",
+    "grunt-jsdoc": "latest",
+    "grunt-mocha-test": "latest",
+    "grunt-shell": "latest",
+    "mocha": "latest",
+    "nock": "latest",
+    "replay": "latest",
+    "should": "latest"
+  }
+}

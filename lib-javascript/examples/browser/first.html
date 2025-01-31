@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Pryv first steps example</title>
+  <script type="text/javascript" src="../../dist/latest/pryv.js"></script>
+</head>
+<body>
+  <h1>Pryv first steps example</h1>
+  <p>
+    Test credentials:
+  </p>
+  <ul>
+    <li>Username: <strong>perkikiki</strong> or <strong>tech@pryv.com</strong></li>
+    <li>Password: <strong>poilonez</strong></li>
+  </ul>
+  <p><span id="pryvButton"></span></p></body>
+
+  <script>
+    // force usage of staging remove this line for production
+    pryv.Auth.config.registerURL = { host: 'reg.pryv.li', 'ssl': true };
+
+    /**
+     * process the form and request access
+     */
+    var requestedPermissions = [
+      {
+        "streamId" : "first-test",
+        "defaultName" : "First test",
+        "level" : "manage"
+      }
+    ];
+
+    // ----------------------- //
+    var pyConn = pryv.Auth.setup({
+      requestingAppId : 'test-first-web',
+      requestedPermissions : requestedPermissions,
+      spanButtonID : 'pryvButton', // (optional)
+      callbacks : {
+        signedIn : myStart,
+        signedOut : myStop
+      }
+    });
+
+    function myStart() {
+      pyConn.accessInfo(function(error, infos) {
+        alert('Signed in! Access info:\n' + JSON.stringify(infos, null, 2));
+
+        // create an event here
+
+        showLastEvents();
+      });
+
+    }
+
+    function myStop() {
+      alert('Signed out.');
+    }
+
+    function showLastEvents() {
+      var filter = new pryv.Filter({limit : 20});
+      pyConn.events.get(filter, function(error, events) {
+        var rawEvents = [];
+        for (var i = 0; i < events.length; i++) {
+          rawEvents.push(events[i].getData()); // get the Event with no circular reference
+        }
+        alert('Last 20 events: ', JSON.stringify(rawEvents, null, 2));
+      });
+    }
+
+    function takeNote() {
+      pyConn.events.create({
+        type: 'note/txt',
+        streamId: 'first-test',
+        content: prompt('Pryv a note')});
+    }
+  </script>
+</html>

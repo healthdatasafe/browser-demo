@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Pryv sign-in example</title>
+  <script type="text/javascript" src="../../dist/latest/pryv.js"></script>
+</head>
+<body>
+  <h1>Pryv sign-in example</h1>
+  <p>
+    Test credentials:
+  </p>
+  <ul>
+    <li>Username: <strong>perkikiki</strong> or <strong>tech@pryv.com</strong></li>
+    <li>Password: <strong>poilonez</strong></li>
+  </ul>
+  <p><span id="pryvButton"></span></p>
+
+  <script>
+    // force usage of staging servers
+    pryv.Auth.config.registerURL = { host: 'reg.pryv.li', 'ssl': true };
+
+    // process the form and request access
+    var requestedPermissions = [
+      {
+        "streamId" : "diary",
+        "defaultName" : "Journal",
+        "level" : "read"
+      },
+      {
+        "streamId" : "position",
+        "defaultName" : "Position",
+        "level" : "read"
+      }
+    ];
+
+    var settings = {
+      requestingAppId : 'test-demo-access',
+      requestedPermissions : requestedPermissions,
+      returnURL : false, // set this if you don't want a popup
+      spanButtonID : 'pryvButton', // (optional)
+      callbacks : {
+        initialization : null,
+        needSignin : null,
+        needValidation : null,
+        accepted : function(username, appToken, languageCode) {
+          console.log("** SUCCESS! username:" + username +
+              " appToken:" + appToken +
+              " lang:" + languageCode);
+        },
+        refused: function(reason) {
+          console.log("** REFUSED! " + reason);
+        },
+        error: function(code, message) {
+          console.log("** ERROR! " + code + " " + message);
+        }
+      }
+    };
+
+    pryv.Auth.setup(settings);
+  </script>
+</body>
+</html>

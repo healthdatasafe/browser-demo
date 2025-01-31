@@ -1,0 +1,51 @@
+{
+  "author": "Pryv <tech@pryv.com>",
+  "name": "browser",
+  "description": "The Pryv web app.",
+  "version": "0.14.4",
+  "private": true,
+  "homepage": "http://pryv.com",
+  "engines": {
+    "node": "18.X"
+  },
+  "dependencies": {
+    "airbrake": "~2.1.1",
+    "backbone": "~1.1.2",
+    "backbone.marionette": "~1.8.6",
+    "d3": "4.9.1",
+    "google-maps": "~1.0.0",
+    "marked": "~0.6.2",
+    "mocha": "^6.1.4",
+    "pryv": "file:./lib-javascript",
+    "socket.io-client": "~2.2.0",
+    "underscore": "~1.5.2"
+  },
+  "scripts": {
+    "build-dev": "grunt",
+    "build-production": "grunt production",
+    "build-ghpages": "grunt ghpages",
+    "webserver": "node node_modules/rec-la/webserver/main.js ./dist"
+  },
+  "devDependencies": {
+    "acorn": "~6.1.1",
+    "blanket": "latest",
+    "grunt": "latest",
+    "grunt-browserify": "latest",
+    "grunt-cli": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-env": "latest",
+    "grunt-git": "latest",
+    "grunt-mocha-test": "latest",
+    "grunt-preprocess": "latest",
+    "grunt-shell": "latest",
+    "nock": "latest",
+    "rec-la": "latest",
+    "should": "latest"
+  },
+  "optionalDependencies": {}
+}
