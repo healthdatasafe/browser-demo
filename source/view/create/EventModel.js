@@ -20,13 +20,17 @@ module.exports = Backbone.Model.extend({
   create: function (callback, progressCallback) {
     var event = this.get('event'),
       file = event.file;
+    console.log('>>> Create EventModel', event, file);
     if (file) {
+      console.log('>>> Create EventModel with attachment', file);
       event.connection.events.createWithAttachment(event, file, callback, progressCallback);
     }  else {
+      console.log('>>> Create EventModel without attachment');
       event.connection.events.create(event, callback);
     }
   },
   addAttachment: function (file) {
+    console.log('>>> EventModel add attachement', this, file);
     var data = new FormData();
     data.append(file.name.split('.')[0], file);
     this.get('event').file = data;

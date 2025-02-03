@@ -22,6 +22,7 @@ module.exports = Marionette.ItemView.extend({
   streamSelected: null,
   canPublish : true,
   getTemplate: function () {
+    console.log('>>>> View getTemplate', this.step);
     if (this.step === creationStep.typeSelect) {
       return '#template-detail-creation-type';
     } else if (this.step === creationStep.streamSelect) {
@@ -71,6 +72,7 @@ module.exports = Marionette.ItemView.extend({
     this.step = creationStep.typeSelect;
   },
   onRender: function () {
+    console.log('>>>> View onRender', this.step);
     $(this.itemViewContainer).html($(this.el).fadeIn());
     this.ui.type.bind('click', this.onTypeClick.bind(this));
     this.ui.stream.bind('click', this.onStreamClick.bind(this));
@@ -360,7 +362,9 @@ module.exports = Marionette.ItemView.extend({
     this.ui.fileElem.click();
   },
   onFileSelected: function (e) {
+    
     var files = e.target.files;
+    console.log('>>>> onFileSelected', e, files);
     if (!files) {
       return false;
     }
@@ -383,6 +387,7 @@ module.exports = Marionette.ItemView.extend({
       }
     }.bind(this));
     if (this.newEvents.length > 0) {
+      console.log('>>>> View set creation step', this.newEvents);
       this.step = creationStep.eventEdit;
       this.render();
       return true;

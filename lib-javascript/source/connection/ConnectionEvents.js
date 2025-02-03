@@ -300,6 +300,7 @@ ConnectionEvents.prototype.stopStream = function (streamLike, date, type, callba
  */
 ConnectionEvents.prototype.createWithAttachment =
   function (newEventLike, formData, callback, progressCallback) {
+    console.log('>>> ConnectionEvents createWithAttachment', newEventLike, formData);
     if (typeof(callback) !== 'function') {
       throw new Error(CC.Errors.CALLBACK_IS_NOT_A_FUNCTION);
     }
@@ -344,6 +345,7 @@ ConnectionEvents.prototype.createWithAttachment =
  */
 ConnectionEvents.prototype.addAttachment =
   function (eventId, formData, callback, progressCallback) {
+    console.log('>>> ConnectionEvents addAttachment', eventId, formData);
     if (typeof(callback) !== 'function') {
       throw new Error(CC.Errors.CALLBACK_IS_NOT_A_FUNCTION);
     }

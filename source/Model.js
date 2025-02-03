@@ -756,7 +756,7 @@ window.onmessage = function (e) {
     download_csv2(selectionToCSV());
   }
 
-  console.log('#####>> ' + e.data);
+  console.log('#####>> ', e.data);
 };
 
 

@@ -2,6 +2,7 @@ node_modules*
 dist
 test/coverage.html
 .idea
+*.DS_Store*
 browser.iml
 app-web.iml
 npm-debug.log

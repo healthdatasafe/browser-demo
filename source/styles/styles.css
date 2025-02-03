@@ -255,11 +255,11 @@ background-color: #00A8E2;
   display: block;
   width: 30px;
   height: 30px;
-  background: url(../images/logo-pryv.png) 0 no-repeat;
+  background: url(../images/logo-hds.png) 0 no-repeat;
   margin-left: -15px;
 }
 .logo.loading {
-  background: url(../images/loader3.gif) 0 0 no-repeat;
+  background: url(../images/logo-hds.png) 0 0 no-repeat;
   background-color: #3e3e3e;
 }
 
