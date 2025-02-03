@@ -1,7 +1,7 @@
 /* global describe, it */
 var ModelFilter = require('../../source/model/MonitorsHandler.js'),
     ConnectionsHandler = require('../../source/model/ConnectionsHandler.js'),
-    Pryv = require('pryv'),
+    Pryv = require('../../source/lib-javascript/source/main.js'),
     RootNode = require('../../source/tree/RootNode.js'),
     SIGNAL = require('../../source/model/Messages').ModelFilter.SIGNAL,
     _ = require('underscore'),
