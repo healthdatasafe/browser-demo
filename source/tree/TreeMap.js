@@ -14,7 +14,7 @@ var RootNode = require('./RootNode.js'),
   OnboardingView = require('../view/onboarding/View.js'),
   StreamView = require('../view/stream/Controller.js'),
   VirtualNode = require('./VirtualNode.js'),
-  Pryv = require('../../lib-javascript/src/main.js');
+  Pryv = require('../lib-javascript/source/main.js');
 
 var MARGIN_TOP = 50;
 var MARGIN_RIGHT = 40;

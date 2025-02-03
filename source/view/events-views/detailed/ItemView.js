@@ -1,6 +1,6 @@
 /* global $ */
 var Marionette = require('backbone.marionette'),
-    Pryv = require('../../lib-javascript/src/main.js'),
+    Pryv = require('../../../lib-javascript/source/main.js'),
     eventUtils = require('../../../utility/eventUtils'),
     _ = require('underscore');
 

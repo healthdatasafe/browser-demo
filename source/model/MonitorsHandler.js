@@ -1,6 +1,6 @@
 
 var _ = require('underscore');
-var Pryv = require('../../lib-javascript/src/main.js');
+var Pryv = require('../lib-javascript/source/main.js');
 var Filter = Pryv.Filter;
 var MSGs = require('./Messages').MonitorsHandler;
 

@@ -6,7 +6,7 @@ var MonitorsHandler = require('./model/MonitorsHandler.js'),
     TreeMap = require('./tree/TreeMap.js'),
     Controller = require('./orchestrator/Controller.js'),
     PanelMenu = require('./view/left-panel/Controller.js'),
-    Pryv = require('./lib-javascript/src/main.js'),
+    Pryv = require('./lib-javascript/source/main.js'),
     TimeLine = require('./timeframe-selector/timeframe-selector.js'),
     UnknownUserView = require('./view/error/unknown-user.js'),
     PUBLIC_TOKEN = 'public',
@@ -54,8 +54,14 @@ var Model = module.exports = function () {  //setup env with grunt
   if (urlInfo.domain === 'pryv.me') {
     localStorage.setItem('skipOnboarding', false);
   }
+  console.log('>>>URLINFO', urlInfo);
 
-  this.urlDomain = this.queryString.domain || urlInfo.domain;
+
+  this.urlDomain = this.queryString.domain || urlInfo.hostname;
+
+  if (urlInfo.domain === 'backloop.dev') {
+    this.urlDomain = 'demo.datasafe.dev';
+  }
 
   Pryv.utility.urls.defaultDomain = this.urlDomain;
 

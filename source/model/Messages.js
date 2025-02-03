@@ -1,7 +1,7 @@
 
 var Messages = module.exports = { };
 
-var SignalEmitter = require('../lib-javascript/src/main.js').utility.SignalEmitter;
+var SignalEmitter = require('../lib-javascript/source/main.js').utility.SignalEmitter;
 Messages.MonitorsHandler = {
   UNREGISTER_LISTENER : SignalEmitter.Messages.UNREGISTER_LISTENER,
   SIGNAL : {
