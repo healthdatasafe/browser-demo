@@ -3,7 +3,7 @@ var _ = require('underscore'),
     TreeNode = require('./TreeNode'),
     StreamNode = require('./StreamNode'),
     VirtualNode = require('./VirtualNode.js'),
-    Pryv = require('pryv'),
+    Pryv = require('../../lib-javascript/src/main.js'),
     streamUtils = require('../utility/streamUtils');
 
 var STREAM_MARGIN = 20;

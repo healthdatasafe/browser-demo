@@ -6,7 +6,7 @@ var _ = require('underscore'),
   BookmarkCollection = require('./BookmarkCollection.js'),
   BookmarkModel = require('./BookmarkModel.js'),
   BookmarkListView = require('./BookmarkListView.js'),
-  Pryv = require('pryv');
+  Pryv = require('../../lib-javascript/src/main.js');
 var Controller = module.exports = function ($modal, connection, target) {
   this.sharings = {};
   this.connection = connection;

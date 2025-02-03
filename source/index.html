@@ -1037,7 +1037,7 @@
           location.href = url + '?returnUrl=' + location.href;
         }
         var domain = document.location.hostname.substr(document.location.hostname.indexOf('.') + 1);
-        var staticWebSource = 'https://sw.' + domain ;
+        var staticWebSource = 'https://' + domain + '/www';
 
         </script>
         <a id="register" href="javascript:redirectRegister(staticWebSource +'/access/register.html')" data-i18n="login.actions.register" target="_self"></a>

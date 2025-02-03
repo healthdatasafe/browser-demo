@@ -1,7 +1,7 @@
 /* global $, window, i18n */
 var Marionette = require('backbone.marionette'),
   ItemView = require('./BookmarkItemView.js'),
-  Pryv = require('pryv'),
+  Pryv = require('../../../lib-javascript/src/main.js'),
   _ = require('underscore');
 
 module.exports = Marionette.CompositeView.extend({

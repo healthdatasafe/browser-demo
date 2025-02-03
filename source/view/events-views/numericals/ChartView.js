@@ -3,7 +3,7 @@
 var _ = require('underscore'),
     dateTime = require('../../../utility/dateTime'),
     Marionette = require('backbone.marionette'),
-    pryv = require('pryv'),
+    pryv = require('../../../../lib-javascript/src/main.js'),
     tsTransform = require('./utils/timeSeriesTransform.js');
 
 var ChartView = {

@@ -1,4 +1,4 @@
-var Pryv = require('pryv');
+var Pryv = require('../../lib-javascript/src/main.js');
 var _ = require('underscore');
 
 

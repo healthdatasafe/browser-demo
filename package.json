@@ -16,9 +16,9 @@
     "google-maps": "~1.0.0",
     "marked": "~0.6.2",
     "mocha": "^6.1.4",
-    "pryv": "file:./lib-javascript",
     "socket.io-client": "~2.2.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "form-data": "0.1.x"
   },
   "scripts": {
     "build-dev": "grunt",
