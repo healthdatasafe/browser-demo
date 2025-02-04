@@ -254,10 +254,12 @@ ConnectionStreams.prototype._createWithData = function (streamData, callback) {
  * @param callback
  */
 ConnectionStreams.prototype._updateWithData = function (streamData, callback) {
+  var streamId = streamData.id;
+  var streamDataX = _.omit(streamData, 'id');
   this.connection.request({
     method: 'PUT',
-    path: '/streams/' + streamData.id,
-    jsonData: streamData,
+    path: '/streams/' + streamId,
+    jsonData: streamDataX,
     callback: callback
   });
 };

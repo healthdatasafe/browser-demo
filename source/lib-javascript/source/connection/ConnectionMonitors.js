@@ -1,7 +1,6 @@
 var _ = require('underscore'),
     utility = require('../utility/utility'),
     Monitor = require('../Monitor');
-const { username } = require('../utility/regex');
 
 /**
  * @class ConnectionMonitors
