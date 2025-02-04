@@ -95,6 +95,7 @@ Monitor.prototype._onIoError = function (error) {
   console.log('Monitor _onIoError' + error);
 };
 Monitor.prototype._onIoEventsChanged = function () {
+  console.log('Monitor _onIoEventsChanged');
   var batch = this.startBatch('IoEventChanged');
   this._connectionEventsGetChanges(batch);
   batch.done('IoEventChanged');

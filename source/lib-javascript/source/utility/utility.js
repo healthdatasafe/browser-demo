@@ -67,11 +67,14 @@ utility.endsWith = function (string, suffix) {
 };
 
 utility.ioConnect = function (settings) {
+  
   var httpMode = settings.ssl ? 'https' : 'http';
-  var url = httpMode + '://' + settings.host + ':' + settings.port + '' +
-      settings.path + '?auth=' + settings.auth + '&resource=' + settings.namespace;
-
-  return socketIO.connect(url, {'force new connection': true});
+  var url = httpMode + '://' + settings.host + ':' + settings.port + settings.path + '/' +
+      settings.username + '/?auth=' + settings.auth ;
+  console.log('ioConnect', settings, url); 
+  return socketIO(url, {
+    forceNew: true
+  });
 };
 
 utility.urls = require('./urls');

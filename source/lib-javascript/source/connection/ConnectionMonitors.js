@@ -1,6 +1,7 @@
 var _ = require('underscore'),
     utility = require('../utility/utility'),
     Monitor = require('../Monitor');
+const { username } = require('../utility/regex');
 
 /**
  * @class ConnectionMonitors
@@ -55,11 +56,11 @@ ConnectionMonitors.prototype._startMonitoring = function (callback) {
   if (this.ioSocket) { return callback(null/*, ioSocket*/); }
 
   var settings = {
-    host : this.connection.username + '.' + this.connection.settings.domain,
+    host : this.connection.settings.domain,
     port : this.connection.settings.port,
     ssl : this.connection.settings.ssl,
+    username: this.connection.username,
     path : this.connection.settings.extraPath + '/' + this.connection.username,
-    namespace : '/' + this.connection.username,
     auth : this.connection.auth
   };
 
@@ -67,15 +68,16 @@ ConnectionMonitors.prototype._startMonitoring = function (callback) {
 
   this.ioSocket.on('connect', function () {
     _.each(this._monitors, function (monitor) { monitor._onIoConnect(); });
-  }.bind(this));
-  this.ioSocket.on('error', function (error) {
-    _.each(this._monitors, function (monitor) { monitor._onIoError(error); });
-  }.bind(this));
-  this.ioSocket.on('eventsChanged', function () {
-    _.each(this._monitors, function (monitor) { monitor._onIoEventsChanged(); });
-  }.bind(this));
-  this.ioSocket.on('streamsChanged', function () {
-    _.each(this._monitors, function (monitor) { monitor._onIoStreamsChanged(); });
+  
+    this.ioSocket.on('error', function (error) {
+      _.each(this._monitors, function (monitor) { monitor._onIoError(error); });
+    }.bind(this));
+    this.ioSocket.on('eventsChanged', function () {
+      _.each(this._monitors, function (monitor) { monitor._onIoEventsChanged(); });
+    }.bind(this));
+    this.ioSocket.on('streamsChanged', function () {
+      _.each(this._monitors, function (monitor) { monitor._onIoStreamsChanged(); });
+    }.bind(this));
   }.bind(this));
   callback(null);
 };

@@ -47,9 +47,6 @@
     "url": "http://github.com/lib-javascript.git"
   },
   "dependencies": {
-    "form-data": "0.1.x",
-    "socket.io-client": "0.9.x",
-    "underscore": "latest"
   },
   "devDependencies": {
     "async": "latest",
